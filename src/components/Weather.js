@@ -8,7 +8,8 @@ const Weather = ({place, summary,temperature, image, precip}) => {
       <h1>{place}</h1>
       <img className={style.image} src={`https://darksky.net/images/weather-icons/${image}.png`} alt=""/>
       <div className={style.content}>
-      <p>{summary} It is currently {temperature}C degrees out. There is {precip}% chance of rain today!</p>
+      <p>{summary}</p>
+      <p>It is currently {temperature}C degrees out. There is {precip}% chance of rain today!</p>
       </div>
       
     </div>

@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Weather from './components/Weather';
 import './App.css';
 import { css } from '@emotion/core';
-import { HashLoader } from 'react-spinners';
+import { RingLoader } from 'react-spinners';
 
 const App = () => {
 
@@ -39,7 +39,7 @@ const App = () => {
     setLocation(dataLocation.features[0].place_name);
     const responseWeather = await fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/131c59f4dd9c0c2c3f1bca28f69c250d/${dataLocation.features[0].center[1]},${dataLocation.features[0].center[0]}?units=si`);
     const dataWeather = await responseWeather.json();
-    setSummary(dataWeather.daily.summary);
+    setSummary(dataWeather.daily.data[0].summary);
     setTemperature(dataWeather.currently.temperature);
     setPrecip(dataWeather.currently.precipProbability);
     setImage(dataWeather.currently.icon);
@@ -75,11 +75,11 @@ const App = () => {
           <div>
           {isLoading ? (
             <div className='sweet-loading'>
-            <HashLoader
+            <RingLoader
               css={override}
               sizeUnit={"px"}
               size={150}
-              color={'#006400'}
+              color={'#0000cd'}
             />
             </div> 
           ) : (
