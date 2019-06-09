@@ -1,5 +1,5 @@
 .header {
-  background: #006400;
+  background: #0000cd;
   color: white;
   margin-bottom: 1.2rem;
   padding: 1.6rem 0;
@@ -12,7 +12,7 @@
 }
 
 .header__subtitle {
-  color: #78c88a;
+  color: #87cefa;
   font-size: 1.6rem;
   font-weight: 500;
   margin: 0;
